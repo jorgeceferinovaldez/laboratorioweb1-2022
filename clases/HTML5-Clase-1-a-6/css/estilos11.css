@@ -1,0 +1,53 @@
+/* UNIDADES DE MEDIDAS RELATIVAS
+
+PX = PIXELES
+
+EM = UNIDAD RELATIVA AL TAMAÑO DE FUENTE DEL CONTENEDOR PADRE O MAS CERCANO
+
+REM = UNIDAD RELATIVA AL TAMAÑO DE FUENTE DEL BODY
+
+% = UNIDAD RELATIVA A LA MEDIDA DEL CONTENEDOR PADRE
+
+*/
+
+/* 3ero colocamos valor a body */
+body{
+    font-size: 20px;
+}
+
+
+/* 1ero */
+/*
+p{
+    font-size: 30px;
+}
+*/
+
+/* 2do da 1em en relacion al padre body, de 16px 
+    si le pongo 2em seria el doble o sea 32px */
+/*
+p{
+    font-size: 1em;
+}
+*/
+
+/* 4to quiero que sean 30px el parrafo sin cambiar la fuente de body, divido 30px (parrafo)  / 20px (body) = 1.5em  */
+p{
+    font-size: 1.5em;
+}
+
+/* 5to va con la parte 2da del html */
+.padre{
+    font-size: 30px;
+    /* aumenta el tamaño de la caja igual porque esta en em y me lo esta tomando en referencia al padre no a body para eso le pongo rem en la .caja*/
+}
+
+
+.caja{
+    /* 300 / 20 = 15em */
+    width: 15em;
+    height: 15em;
+    background-color: red;
+}
+
+/* si quiero cambiar el tamaño solo cambiamos el tamaño del padre (body) en lugar de cambiar en todos las los pixeles */

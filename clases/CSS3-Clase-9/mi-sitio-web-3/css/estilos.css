@@ -1,0 +1,36 @@
+.contenedor-padre{
+    width: 80%;
+    max-width: 800px;
+    height: 400px;
+    margin: auto;
+
+    /* Por nombre de color */
+    /*background-color: black;*/
+
+    /* Colores aceptados: www.w3schools.com/colors/colors_names.asp */
+
+    /* Por código hexadecimal */
+    /*color: #ffffff;*/
+
+    /* Por código RGB */
+    /*background-color: rgb(255, 255, 255);*/
+
+    /* Por código HSL */
+    /*color: hsl(5,20%, 90%);*/
+
+    /* Imagen de fondo */
+    background-image: url(../img/eldenring.jpg);
+    /*background-size: 20%;*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.contenedor-hijo{
+    background-color: rgba(0,0,0, 0.5);
+    width: 100%;
+    height: 300px;
+    padding-top: 100px;
+
+    text-align: center;
+}

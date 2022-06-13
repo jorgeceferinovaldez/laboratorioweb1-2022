@@ -1,0 +1,31 @@
+.contenedor {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .contenedor img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .contenedor .boton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    color: black;
+    font-size: 16px;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .contenedor .boton:hover {
+    background-color: black;
+    color: white;
+  }

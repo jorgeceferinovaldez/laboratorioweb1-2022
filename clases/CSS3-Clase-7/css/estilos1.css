@@ -1,0 +1,10 @@
+/* body es el padre y todas heredan de él */
+/* https://www.w3.org/TR/css-2010/#properties */
+body{
+    color:red;
+}
+
+/* Evitamos que herede el del padre */
+h1{
+    color:blue;
+}

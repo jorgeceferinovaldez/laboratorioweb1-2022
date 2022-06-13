@@ -1,0 +1,31 @@
+/* Propiedad de sombras al texto */
+h1, p{
+    text-shadow: 5px 5px 3px black;
+}
+
+/* PREFIJOS DE LOS NAVEGADORES */
+/* SON PEQUEÑAS MODIFICACIONES QUE ANTEPONEMOS 
+    A TODAS LAS PROPIEDADES CSS QUE NO SON BIEN INTERPRETADOS POR LOS NAVEGADORES */
+
+/*
+
+-moz-: Para navegadores basados en Gecko como Mozilla
+
+-webkit-: Para navegadores basados en Webkit, como Chrome
+
+-o-: Para Opera
+
+-ms-: Para Internet Explorer y Edge
+
+*/ 
+
+img{
+    width: 500px;
+
+    -webkit-box-shadow: 5px 5px 3px #b01a1a;
+    -moz-box-shadow: 5px 5px 3px #b01a1a;
+    -o-box-shadow: 5px 5px 3px #b01a1a;
+    -ms-box-shadow: 5px 5px 3px #b01a1a;
+    box-shadow: 5px 5px 3px #b01a1a;
+}
+

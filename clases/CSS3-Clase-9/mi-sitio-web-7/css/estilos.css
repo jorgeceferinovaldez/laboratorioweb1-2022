@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'PT Sans', sans-serif;
+}
+
+.contenedor{
+  width: 100%;
+  max-width: 1170px;
+  margin: auto;
+}
+
+/*////----Cabecera----////*/
+header{
+  width: 100%;
+  height: 200px;
+  background: #FCFFF5;
+}
+
+header .contenedor{
+  margin: auto;
+}
+
+.logo{
+  padding:25px 0;
+}
+
+.logo img{
+  width: 100px;
+  display: block;
+  margin: auto;
+}
+
+header .contenedor nav{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+  max-width: 430px;
+  margin:auto;
+}
+
+header .contenedor nav a{
+  text-decoration: none;
+  color: #7a7a7a;
+}
+
+header .contenedor nav a:hover{
+  color:#a4281f;
+}
+
+/*////----Fin de Cabecera----////*/
+
+/*////----Banner----////*/
+
+.banner{
+  width: 100%;
+  height: 500px;
+  background-image: url(../img/banner-inicio.jpg);
+  background-position:center;
+  background-size: cover;
+}
+
+.banner > div{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(209, 219, 189, 0.5);
+}
+
+#llamada-accion{
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+#llamada-accion h2{
+  font-size: 24px;
+  color: white;
+  text-transform: uppercase;
+  padding-top: 115px;
+  padding-bottom: 20px;
+}
+
+#llamada-accion p{
+  font-size: 48px;
+  color: #ffffff;
+  padding: 45px 0px;
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 100%;
+  max-width: 470px;
+}
+
+#llamada-accion a{
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+  padding: 10px 50px;
+  margin-top: 35px;
+  background-color: rgba(0, 0, 0, 0.47);
+  display: inline-block;
+}
+
+/*////----Fin de Banner----////*/
+
+/*////----Bienvenida----////*/
+
+.bienvenida{
+  width: 100%;
+  background-color: #3e606f;
+  margin-top: 2px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.bienvenida h3{
+  font-size: 14px;
+  padding-top:45px;
+  padding-bottom: 35px;
+}
+
+.bienvenida p{
+  max-width: 370px;
+  margin: auto;
+  padding-bottom:60px;
+  line-height: 1.7em;
+}
+
+/*////----Fin de Bienvenida----////*/
+
+/*////----Nosotros----////*/
+.nosotros{
+  padding-bottom: 80px;
+}
+
+@media all and (min-width:769px){
+  .nosotros{
+    padding-top: 80px;
+  }
+}
+
+.nosotros > div{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+
+.nosotros figure{
+  width: 100%;
+  max-width: 570px;
+}
+
+.nosotros figure img{
+  width: 100%;
+}
+
+.conocenos{
+  padding: 15px 0px;
+  text-align: center;
+
+  max-width: 570px;
+}
+
+@media all and (min-width:769px){
+  .conocenos{
+    text-align: left;
+    padding-left:30px;
+  }
+  .nosotros figure{
+    margin-right: 30px;
+  }
+}
+
+.conocenos > p:nth-child(1){
+  padding-bottom: 20px;
+  border-bottom: 1px solid #a2a2a2;
+  font-size: 14px;
+}
+
+.conocenos > h3{
+  padding-top: 20px;
+  padding-bottom: 30px;
+  font-size: 18px;
+  color: #0e96dd;
+}
+
+.conocenos > p:nth-child(3){
+  font-size: 14px;
+  color: #3c1c22;
+  padding-bottom: 25px;
+}
+
+.conocenos > p:nth-child(4){
+  padding-bottom: 20px;
+  font-size: 14px;
+  color:#646464;
+}
+
+.conocenos a{
+  color:#0e96dd;
+  font-size: 15px;
+}
+/*////----Fin de Nosotros----////*/
+
+/*////----Pie de pagina----////*/
+
+.top-footer{
+  height:25px;
+  background-color: #193441;
+}
+
+.center-footer{
+  background-color: #152d37;
+}
+
+.center-footer .contenedor{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.center-footer .widget{
+  padding-top: 20px;
+  padding-bottom: 35px;
+  text-align: center;
+  color: #7a7a7a;
+
+  max-width: 270px;
+  margin: auto;
+}
+
+.center-footer .widget h4{
+  padding-bottom: 35px;
+  font-size: 18px;
+}
+
+.center-footer .widget p{
+  font-size: 14px;
+}
+
+.bottom-footer{
+  height: 25px;
+  background-color: #193441;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-footer p{
+  color:#7a7a7a;
+  font-size: 12px;
+}
+
+/*////----Fin de Pie de pagina----////*/

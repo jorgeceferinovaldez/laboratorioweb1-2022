@@ -1,0 +1,44 @@
+/* Alinear texto */
+p{
+    text-align: justify;
+}
+
+
+/* Indentacion del texto o sangría */
+p{
+    text-indent: 100px;
+}
+
+
+
+/* Decorar el texto */
+p{
+    text-decoration:none;
+}
+
+
+/* Transformar el texto */
+p{
+    /*text-transform:lowercase;*/
+}
+
+
+
+/* Espacio entre letras */
+p{
+    /*letter-spacing: 5px;*/
+}
+
+
+/* Espacio entre palabras */
+p{
+    /*word-spacing: 5px;*/
+}
+
+
+/* Color del texto */
+p{
+    color: red;
+}
+
+

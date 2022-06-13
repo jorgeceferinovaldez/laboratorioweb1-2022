@@ -1,0 +1,27 @@
+table, tr, th, td {
+    border: 1px solid black;
+}
+
+table{
+    border-collapse: collapse;
+    width: 80%;
+}
+
+td, th{
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* 
+    even = pares 
+    odd = impares 
+*/
+tr:nth-child(even){
+    background-color: mediumaquamarine;
+}
+
+
+th{
+    background-color: rgb(144, 56, 56);
+}
