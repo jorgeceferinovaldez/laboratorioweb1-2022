@@ -1,39 +1,10 @@
 let compra = document.getElementById("compra");
-console.log(compra);
+//console.log(compra);
 
-/* Para evitar usar base de datos */
-let itemsCompraDatos = [
-{
-    id: "kjde",
-    nombre: "Placa de Video Nvidia",
-    precio: 45000,
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing.",
-    img: "img/gpu.jpg"
-},
-{
-    id: "lokf",
-    nombre: "Mouse Gamer",
-    precio: 7500,
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing.",
-    img: "img/mouse_gamer.jpg"
-},
-{
-    id: "bvxcs",
-    nombre: "Notebook",
-    precio: 237500,
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing.",
-    img: "img/notebook.jpg"
-},
-{
-    id: "pvqws",
-    nombre: "Teclado Gamer",
-    precio: 23000,
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing.",
-    img: "img/teclado.jpg"
-}];
 
-let cesta = [];
-/* let cesta = localStorage.getItem("datos"); */
+ //let cesta = []; 
+let cesta = JSON.parse(localStorage.getItem("datos")) || [];
+
 
 /* Generar una funcion que genere la compra */
 /* let generarCompra = () => {
@@ -60,17 +31,20 @@ let cesta = [];
 let generarCompra = () => {
     return (compra.innerHTML = itemsCompraDatos.map((x)=>{
         let {id, nombre, precio, desc, img } = x;
+        let buscar = cesta.find((x)=>x.id === id) || [];
         return `
-        <div id='${id}' class="item">
-        <img width="220" src="${img}" alt="GPU">
+        <div id=id-producto-${id} class="item">
+        <img width="220" src="${x.img}" alt="GPU">
         <div class="detalles">
           <h3>${nombre}</h3>
           <p>${desc}</p>
           <div class="precioCantidad">
             <h2>${precio}</h2>
             <div class="botones">
-              <i class="bi bi-dash-lg"></i>
-              <div id=${id} class="cantidad">0</div>
+              <i onclick="decrementar(${id})" class="bi bi-dash-lg"></i>
+              <div id=${id} class="cantidad">
+              ${buscar.item === undefined? 0: buscar.item}
+              </div>
               <i onclick="incrementar(${id})" class="bi bi-plus-lg"></i>
             </div>
           </div>
@@ -83,19 +57,62 @@ generarCompra();
 
 /* incremento */
 let incrementar = (id) => {
-    let itemSeleccionado = id;
-    let buscar = cesta.find((x) => x.id === itemSeleccionado);
-    //console.log(buscar);
     
+    let itemSeleccionado = id;
+    //console.log(itemSeleccionado.id);
+    let buscar = cesta.find((x)=> x.id === itemSeleccionado.id);
+
     if (buscar === undefined){
-        cesta.push({
-            id: itemSeleccionado.id,
-            item: 1,
-        }); 
-    } 
+      cesta.push({
+        id: itemSeleccionado.id,
+        item: 1,
+      }); 
+    }
     else{
-        buscar.item += 1;
+      buscar.item += 1; //sumo uno al item del id ese
+    }
+
+    //console.log(cesta);
+
+    //actualizamos la cantidad en el html
+    actualizar(itemSeleccionado.id);
+
+    localStorage.setItem("datos", JSON.stringify(cesta));
+
+};
+
+
+let decrementar = (id) => { 
+    let itemSeleccionado = id;
+    //console.log(itemSeleccionado.id);
+    let buscar = cesta.find((x) => x.id === itemSeleccionado.id);
+
+    if (buscar === undefined) return;
+    else if (buscar.item === 0) return;
+    else{
+      buscar.item -= 1;
     };
 
-    console.log(cesta);
-}
+    actualizar(itemSeleccionado.id);
+
+    /* Para eliminar los elementos que tienen item=0 */
+    cesta = cesta.filter((x) => x.item !== 0);
+
+    localStorage.setItem("datos", JSON.stringify(cesta));
+};
+
+/* Actualizamos la cantidad del articulo si agregamos o sacamos */
+let actualizar = (id) => {
+  let buscar = cesta.find((x)=>x.id == id);
+  document.getElementById(id).innerHTML = buscar.item;
+
+  calculo();
+};
+
+/* Actualizamos la informacion del carrito */
+let calculo = () => {
+  let iconoCarrito = document.getElementById("carritoCantidad");
+  iconoCarrito.innerHTML = cesta.map((x) => x.item).reduce((x, y) => x + y, 0);
+};
+
+calculo();

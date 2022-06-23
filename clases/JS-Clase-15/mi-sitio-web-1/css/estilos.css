@@ -22,6 +22,16 @@ body{
     margin-bottom: 30px;
 }
 
+i{
+  cursor: pointer;  
+}
+
+/* Cambio el estilo del ancla */
+a{
+    text-decoration: none;
+    color: white;
+}
+
 .carrito{
     position: relative;
     background-color: #fff;
