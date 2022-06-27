@@ -108,3 +108,67 @@ a{
     color: green;
 }
 
+/* Estilo del carrito de compra*/
+.bi-x-lg{
+    color: red;
+    font-weight: bold;
+}
+
+
+.carrito-de-compra{
+    display: grid;
+    grid-template-columns: repeat(1, 390px);
+    gap: 15px;
+    justify-content: center;
+}
+
+
+.item-carro{
+    border: 3px solid #212529;
+    border-radius: 5px;
+    display: flex;
+}
+
+.titulo-precio-x{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.titulo-precio{
+    display: flex;
+    align-items: center;
+    grid-template: 10px;
+}
+
+.precio-item-carro{
+    background-color: #212529;
+    color: white;
+    border-radius: 5px;
+    padding: 3px 6px;
+}
+
+.texto-central{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.homeBTN,
+.checkout,
+.eliminarTodos{
+    background-color: #212529;
+    color: white;
+    border: none;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.checkout{
+    background-color: green;
+}
+
+.eliminarTodos{
+    background-color: red;
+}
